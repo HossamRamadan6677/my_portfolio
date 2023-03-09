@@ -26,6 +26,7 @@ class Profile extends StatelessWidget {
           const ResponsiveBreakpoint.resize(1000, name: DESKTOP)
         ],
       ),
+            debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       darkTheme: ThemeData(),
       locale: Get.locale,
