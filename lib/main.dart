@@ -20,14 +20,15 @@ class Profile extends StatelessWidget {
       builder: (context, child) => ResponsiveWrapper.builder(
         child,
         maxWidth: 2000,
-        minWidth: 350,
+        minWidth: 350,   
+
+        
         breakpoints: [
           const ResponsiveBreakpoint.resize(350, name: MOBILE),
           const ResponsiveBreakpoint.autoScale(800, name: TABLET),
           const ResponsiveBreakpoint.resize(1000, name: DESKTOP)
-        ],
-      ),
-      debugShowCheckedModeBanner: false,
+        ],    
+      ), 
       theme: ThemeData(),
       darkTheme: ThemeData(),
       locale: Get.locale,
