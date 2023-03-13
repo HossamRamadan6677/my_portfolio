@@ -8,6 +8,8 @@ import 'Core/Routes/routes.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initServices();
+  // ignore: avoid_print
+  print('');
   runApp(const Profile());
 }
 
