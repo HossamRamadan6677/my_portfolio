@@ -10,7 +10,7 @@ class Dictionary extends Translations {
           "title": "بروفايل",
           "home": "الرئيسيه",
           "who am i": "من انا",
-          "my works": "أعمالي",
+          "my certifications": "شهاداتي",
           "contact me": "تواصل معي",
           "welcome": "مرحبا بكم",
           "myName": "حسام رمضان",
@@ -21,7 +21,7 @@ class Dictionary extends Translations {
           "email": "الــبـريـد",
           "phone": "الهاتف",
           "services": "خدماتي",
-          "PartOfMyWorks": "جزء من اعمالي", 
+          "PartOfMyWorks": "جزء من اعمالي",
           "contactMe": "تواصل معي",
           "im": "أنا ",
           "aboutMe": '''
@@ -47,7 +47,7 @@ class Dictionary extends Translations {
           "home": "Home",
           "who am i": "Who am i",
           "my services": "My services ",
-          "my works": "My works",
+          "my certifications": "My Certifications",
           "contact me": "Contact me",
           "welcome": "Welcome",
           "myName": "Hossam Ramadan",
@@ -59,8 +59,6 @@ class Dictionary extends Translations {
           "phone": "Phone",
           "services": "Services",
           "PartOfMyWorks": "Part of my works",
- 
-   
           "contactMe": "Contact me",
           "im": "I'm ",
           "aboutMe": '''
@@ -91,7 +89,7 @@ class DictionaryController extends GetxController {
     services.sharedPreferences.getString("locale") != null
         ? currentLanguageCode = services.sharedPreferences.getString("locale")!
         : currentLanguageCode = Get.deviceLocale.toString();
- 
+
     Get.updateLocale(Locale(currentLanguageCode));
     super.onInit();
   }

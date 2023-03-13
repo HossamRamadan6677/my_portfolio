@@ -5,5 +5,5 @@ class Static  {
   static EdgeInsets mainPadding(BuildContext context) => EdgeInsets.symmetric(
       vertical: 20,
       horizontal:
-          ResponsiveWrapper.of(context).isLargerThan(TABLET) ? 150 : 20);
+          ResponsiveWrapper.of(context).isLargerThan(TABLET) ? 120 : 15);
 }

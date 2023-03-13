@@ -30,6 +30,18 @@ class HomeController extends GetxController {
 
   ScrollController homeScrollController = ScrollController();
   double scrollValue = 0;
+  List<String> myCertificationsImages = [
+    ImageAsset.dartCertificate,
+  ];
+  List<String> myCertificationsUrl = [
+    "https://www.udemy.com/certificate/UC-ee3fcf30-fc1a-451c-9b0e-66873bc17cc5/"
+  ];
+  openCertificateLink(int index) async {
+    Uri toUri = Uri.parse(myCertificationsUrl[index]);
+    if (await canLaunchUrl(toUri)) {
+      await launchUrl(toUri, mode: LaunchMode.externalApplication);
+    }
+  }
 
   @override
   void onInit() {
@@ -48,7 +60,7 @@ class HomeController extends GetxController {
         headerActionButtonsTitles: [
           "home".tr,
           "who am i".tr,
-          "my works".tr,
+          "my certifications".tr,
           "contact me".tr,
         ],
         welcome: "welcome".tr,
@@ -63,7 +75,7 @@ class HomeController extends GetxController {
         myEmail: "HossamRamadan6677@gmail.com",
         phone: "phone".tr,
         myPhone: "01148183794",
-        myWorks: "PartOfMyWorks".tr,
+        myCertification: "my certifications".tr,
         contactMe: "contactMe".tr,
         subject: "subject".tr,
         clear: "clear".tr,
@@ -90,7 +102,7 @@ ${homeData.phone} : ${homeData.myPhone}
     }
     Get.locale.toString() == "ar"
         ? dictionaryController.changeLocale("en")
-        : dictionaryController.changeLocale("ar"); 
+        : dictionaryController.changeLocale("ar");
     update();
   }
 

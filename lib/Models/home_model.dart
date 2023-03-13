@@ -19,7 +19,7 @@ class HomeModel extends DictionaryController {
     required this.myEmail,
     required this.phone,
     required this.myPhone,
-    required this.myWorks,
+    required this.myCertification,
 
     // section 4
     required this.contactMe,
@@ -47,7 +47,7 @@ class HomeModel extends DictionaryController {
   String myEmail;
   String myPhone;
   // section 3
-  String myWorks;
+  String myCertification;
 
   // Section4
   String contactMe;

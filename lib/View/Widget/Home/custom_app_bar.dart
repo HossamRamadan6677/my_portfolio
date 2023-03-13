@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:profile/Core/Controllers/home_controller.dart';
-// using as res because getx contains Condition class like responsive framework
+import 'package:profile/Core/Controllers/home_controller.dart'; 
 import 'package:responsive_framework/responsive_framework.dart' as res;
 import '../../../Core/Static/static.dart';
 
@@ -39,7 +38,7 @@ class CustomAppBar extends StatelessWidget {
                             controller
                                 .homeData.headerActionButtonsTitles[index],
                             style: const TextStyle(
-                                fontSize: 22, color: Colors.white),
+                                fontSize: 20, color: Colors.white),
                           ),
                         ),
                         onPressed: () => controller.goToSection(index: index),

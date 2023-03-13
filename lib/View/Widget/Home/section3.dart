@@ -1,13 +1,10 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
 import 'package:profile/Core/Controllers/home_controller.dart';
-import 'package:profile/Core/assets/image_asset.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-// ignore: must_be_immutable
-class Section3 extends StatelessWidget {
-  Section3({super.key});
-  HomeController homeController = Get.find();
+class Section3 extends GetView<HomeController> {
+  const Section3({super.key});
   @override
   Widget build(BuildContext context) => Container(
         color: Colors.white,
@@ -19,7 +16,7 @@ class Section3 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              homeController.homeData.myWorks,
+              controller.homeData.myCertification,
               style: const TextStyle(
                   fontFamily: "hanimation", fontSize: 30, color: Colors.black),
             ),
@@ -30,32 +27,47 @@ class Section3 extends StatelessWidget {
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               children: List.generate(
-                  3,
+                  controller.myCertificationsImages.length,
                   (index) => ResponsiveRowColumnItem(
-                          child: InkWell(
-                        onTap: () {},
-                        child: Neumorphic(
-                          margin: const EdgeInsets.all(10),
-                          style: NeumorphicStyle(
-                              shape: NeumorphicShape.concave,
-                              boxShape: NeumorphicBoxShape.roundRect(
-                                  BorderRadius.circular(12)),
-                              depth: 8,
-                              lightSource: LightSource.topLeft,
-                              color: Colors.white),
-                          child: Container(
-                            width: 200,
-                            height: 200,
-                            decoration: BoxDecoration(
+                        child: InkWell(
+                          onTap: () => controller.openCertificateLink(index),
+                          child: Neumorphic(
+                            style: NeumorphicStyle(
+                                shape: NeumorphicShape.concave,
+                                boxShape: NeumorphicBoxShape.roundRect(
+                                    BorderRadius.circular(12)),
+                                depth: 8,
+                                lightSource: LightSource.topLeft,
+                                color: Colors.white),
+                            child: Container(
+                              alignment: Alignment.bottomRight,
+                              width: ResponsiveWrapper.of(context)
+                                      .isLargerThan(MOBILE)
+                                  ? 300
+                                  : 200,
+                              height: ResponsiveWrapper.of(context)
+                                      .isLargerThan(MOBILE)
+                                  ? 300
+                                  : 200,
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
-                                image: const DecorationImage(
+                                image: DecorationImage(
                                     fit: BoxFit.fill,
-                                    image: AssetImage(
-                                      ImageAsset.noProject,
-                                    ))),
+                                    image: AssetImage(controller
+                                        .myCertificationsImages[index])),
+                              ),
+                              child: Container(
+                                  margin: const EdgeInsets.all(10),
+                                  width: 40,
+                                  height: 40,
+                                  child: Image.network(
+                                    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Dart-logo-icon.svg/2048px-Dart-logo-icon.svg.png",
+                                    fit: BoxFit.fill,
+                                  )),
+                            ),
                           ),
                         ),
-                      ))),
+                      )),
             ),
           ],
         ),

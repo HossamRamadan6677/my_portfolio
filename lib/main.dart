@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:profile/Core/Routes/bindings.dart';
 import 'package:profile/Core/Services/services.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'Core/Localization/dictionary.dart';
@@ -26,10 +27,12 @@ class Profile extends StatelessWidget {
           const ResponsiveBreakpoint.resize(1000, name: DESKTOP)
         ],
       ),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       darkTheme: ThemeData(),
       locale: Get.locale,
       getPages: routes,
+      initialBinding: AppBindings(),
       translations: Dictionary(),
     );
   }

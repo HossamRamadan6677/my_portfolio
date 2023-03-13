@@ -3,12 +3,11 @@ import 'package:get/get.dart';
 import 'package:profile/Core/Controllers/home_controller.dart';
 import 'package:profile/Core/Static/static.dart';
 
-class Section4 extends StatelessWidget {
+class Section4 extends GetView<HomeController> {
   const Section4({super.key});
 
   @override
   Widget build(BuildContext context) {
-    HomeController controller = Get.find();
     return Container(
       padding: Static.mainPadding(context),
       child: Column(

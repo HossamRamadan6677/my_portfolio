@@ -1,14 +1,13 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:profile/Core/Controllers/home_controller.dart'; 
+import 'package:profile/Core/Controllers/home_controller.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class DrawerContent extends StatelessWidget {
+class DrawerContent extends GetView<HomeController> {
   const DrawerContent({super.key});
   @override
   Widget build(BuildContext context) {
-    HomeController controller = Get.find();
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 10),
       color: Colors.white,

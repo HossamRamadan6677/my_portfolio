@@ -3,16 +3,15 @@ import 'package:get/get.dart';
 import 'package:profile/Core/Controllers/home_controller.dart';
 import 'package:profile/Core/Static/static.dart';
 
-class Section2 extends StatelessWidget {
+class Section2 extends GetView<HomeController> {
   const Section2({super.key});
 
   @override
   Widget build(BuildContext context) {
-    HomeController controller = Get.find();
     return Container(
       color: Colors.white,
       width: double.infinity,
-      padding: Static .mainPadding(context),
+      padding: Static.mainPadding(context),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
